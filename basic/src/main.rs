@@ -9,6 +9,7 @@
 mod error_handling;
 mod unit_test;
 
+extern crate lib_basic;
 fn main() {
     // println!("Hello, world!");
     // vars::sub_a::run();
@@ -21,4 +22,5 @@ fn main() {
     // enums::run();
     // traits::run();
     error_handling::run();
+    lib_basic::print_random_number();
 }
