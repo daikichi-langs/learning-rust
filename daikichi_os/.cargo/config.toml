@@ -1,0 +1,9 @@
+[unstable]
+build-std = ["core", "compiler_builtins"] # cargoにcoreとcompiler_builtinsライブラリを再コンパイルするよう命令
+build-std-features = ["compiler-builtins-mem"] # コンパイラに必要な関数を与えるため
+
+[build]
+target = "x86_64-daikichi_os.json" # cargo build 実行時に デフォルトの --target を指定するため
+
+[target.'cfg(target_os = "none")']
+runner = "bootimage runner" # cargo runのときに呼ばれるコマンドを指定
