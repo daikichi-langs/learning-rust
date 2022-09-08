@@ -8,10 +8,10 @@ impl Rectangle {
     }
 }
 
-fn is_double(i: i32) -> i32 {
+fn double(i: i32) -> i32 {
     i * 2
 }
-fn is_greeting(name: &str) -> String {
+fn greet(name: &str) -> String {
     format!("Hello! {}!!", name)
 }
 
@@ -19,7 +19,7 @@ fn is_greeting(name: &str) -> String {
 mod tests {
     use super::*;
     #[test]
-    fn is_larger_test() {
+    fn is_larger() {
         let rect = Rectangle {
             height: 5,
             width: 5,
@@ -31,7 +31,7 @@ mod tests {
         assert!(rect.compare(&rectangle));
     }
     #[test]
-    fn is_smaller_test() {
+    fn is_smaller() {
         let rect = Rectangle {
             height: 3,
             width: 3,
@@ -43,12 +43,12 @@ mod tests {
         assert!(!(rect.compare(&rectangle)));
     }
     #[test]
-    fn is_double_test() {
-        assert_eq!(6, is_double(3));
+    fn is_double() {
+        assert_eq!(6, double(3));
     }
     #[test]
-    fn is_greeting_test() {
-        let res = is_greeting("rust");
+    fn is_greeting() {
+        let res = greet("rust");
         assert!(res.contains("rust"));
     }
 }
