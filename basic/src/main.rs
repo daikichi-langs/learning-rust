@@ -6,6 +6,7 @@
 // mod structs;
 // mod enums;
 // mod traits;
+mod debug;
 mod error_handling;
 mod unit_test;
 
@@ -23,4 +24,5 @@ fn main() {
     // traits::run();
     error_handling::run();
     lib_basic::print_random_number();
+    debug::run();
 }
