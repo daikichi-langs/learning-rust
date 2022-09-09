@@ -1,13 +1,16 @@
 use std::env;
 
-fn convert(num: f64, unit: &String) {
+fn convert(degree: f64, unit: &String) {
+    let deg;
+    let uni;
     if unit == "c" {
-        let degree = (num * 9.0 / 5.0) + 32.0;
-        println!("{}{} near equals {}f", num, unit, degree);
+        deg = (degree * 9.0 / 5.0) + 32.0;
+        uni = "f";
     } else {
-        let degree = (5.0 / 9.0) * (num - 32.0);
-        println!("{}{} near equals {}c", num, unit, degree);
+        deg = (5.0 / 9.0) * (degree - 32.0);
+        uni = "c";
     }
+    println!("{}{} near equals {}{}", degree, unit, deg, uni);
 }
 fn help() {
     println!("usage: cargo run [Integer] [\"s\" or \"f\"]");
@@ -37,13 +40,11 @@ fn main() {
                     return;
                 }
             };
-            match &unit[..] {
-                "c" => convert(number, &unit),
-                "f" => convert(number, &unit),
-                _ => {
-                    eprintln!("error: second argument must be \"c\" or \"f\"");
-                }
-            }
+            if &unit[..] == "f" || &unit[..] == "c" {
+                convert(number, &unit)
+            } else {
+                eprintln!("error: second argument must be \"c\" or \"f\"");
+            };
         }
         _ => {
             help();
