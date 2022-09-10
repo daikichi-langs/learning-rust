@@ -1,18 +1,18 @@
-fn parse(n: usize) -> String {
+fn parse(n: usize) -> &'static str {
     return match n {
-        1 => (String::from("first")),
-        2 => (String::from("second")),
-        3 => (String::from("third")),
-        4 => (String::from("fourth")),
-        5 => (String::from("fifth")),
-        6 => (String::from("sixth")),
-        7 => (String::from("seventh")),
-        8 => (String::from("eighth")),
-        9 => (String::from("ninth")),
-        10 => (String::from("tenth")),
-        11 => (String::from("eleventh")),
-        12 => (String::from("twelfth")),
-        _ => (String::from("_")),
+        1 => "first",
+        2 => "second",
+        3 => "third",
+        4 => "fourth",
+        5 => "fifth",
+        6 => "sixth",
+        7 => "seventh",
+        8 => "eighth",
+        9 => "ninth",
+        10 => "tenth",
+        11 => "eleventh",
+        12 => "twelfth",
+        _ => "_",
     };
 }
 
